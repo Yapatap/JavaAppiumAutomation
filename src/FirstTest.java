@@ -46,7 +46,7 @@ public class FirstTest {
                 "//*[@resource-id='org.wikipedia:id/page_list_item_description']//*[@text='Object-oriented programming language']",
                 "Cannot find 'Object-oriented programming language' topic",
                 15
-        )
+        );
 
 
     }
