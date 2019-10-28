@@ -39,11 +39,11 @@ public class FirstTest {
         waitForElementByXpathAndSendKeys(
                 "//*[contains(@text,'Search…')]",
                 "Java",
-                "Cannot find element 'Java'",
+                "Cannot find element 'Search…'",
                 5
         );
         waitForElementPresentByXpath(
-                "//*[@resource-id='org.wikipedia:id/page_list_item_description']//*[@text='Object-oriented programming language']",
+                "//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[contains(@text,'Object-oriented programming language')]",
                 "Cannot find 'Object-oriented programming language' topic",
                 15
         );
