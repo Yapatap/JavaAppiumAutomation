@@ -129,6 +129,46 @@ public class FirstTest {
                 search_title
         );
     }
+    @Test
+    public void homeTaskEx3SearchCancel()
+    {
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
+                "Cannot find element",
+                5
+        );
+        waitForElementAndSendKeys(
+                By.xpath("//*[contains(@text,'Search…')]"),
+                "Water",
+                "Cannot find element 'Search…'",
+                5
+        );
+        waitForElementPresent(
+                By.id("org.wikipedia:id/page_list_item_description"),
+                "'Chemical compound' was not found on this page",
+                5
+        );
+        waitForElementPresent(
+                By.id("org.wikipedia:id/page_list_item_description"),
+                "'Political scandal that occurred in the United States in the 1970s' was not found on this page",
+                5
+        );
+        waitForElementAndClear(
+                By.id("org.wikipedia:id/search_src_text"),
+                "Search element is not found",
+                5
+        );
+        waitForElementAndClick(
+                By.id("org.wikipedia:id/search_close_btn"),
+                "Cannot find cross button",
+                5
+        );
+        waitForElementNotPresent(
+                By.id("org.wikipedia:id/search_close_btn"),
+                "Cross button is still there",
+                5
+        );
+    }
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds)
     {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
