@@ -421,7 +421,7 @@ public class FirstTest {
         );
     }
     @Test
-    public void testHomeTaskEx6()
+    public void testHomeTaskEx5()
     {
         waitForElementAndClick(
                 By.xpath("//*[contains(@text,'Search Wikipedia')]"),
