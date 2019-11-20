@@ -108,6 +108,7 @@ public class MainPageObject {
     public void assertElementNotPresent(By by, String error_message)
     {
         int amount_of_elements = getAmountOfElements(by);
+
         if (amount_of_elements > 0)
         {
             String default_message = "An element '" + by.toString() + "' supposed to be not present";
@@ -117,9 +118,9 @@ public class MainPageObject {
     public void assertElementPresent(By by, String error_message)
     {
         int amount_of_elements = getAmountOfElements(by);
-        if ( amount_of_elements < 0)
+        if ( amount_of_elements == 0)
         {
-            String default_message = "An element '" + by.toString() + "' supposed to be present";
+            String default_message = "An element '" + by.toString() + "' supposed to be present (elements were found = '" + amount_of_elements + "')";
             throw  new AssertionError (default_message + " " + error_message);
         }
     }

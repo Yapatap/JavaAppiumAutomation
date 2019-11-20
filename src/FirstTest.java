@@ -521,8 +521,7 @@ public class FirstTest extends CoreTestCase {
         );
     }
     @Test
-    public void testAssertionEx6()
-    {
+    public void testAssertionEx6() throws InterruptedException {
         MainPageObject.waitForElementAndClick(
                 By.xpath("//*[contains(@text,'Search Wikipedia')]"),
                 "Cannot find element",
@@ -540,6 +539,7 @@ public class FirstTest extends CoreTestCase {
                 "Cannot find 'Object-oriented programming language' topic",
                 15
         );
+        Thread.sleep(3000);
         String search_result_locator = "//*[@resource-id='org.wikipedia:id/view_page_title_text']";
         MainPageObject.assertElementPresent(
                 By.xpath(search_result_locator),
